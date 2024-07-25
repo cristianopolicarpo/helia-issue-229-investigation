@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@helia/unixfs": "^1.4.1",
+    "@libp2p/ipni-content-routing": "^2.0.2",
+    "@libp2p/pubsub-peer-discovery": "^8.0.4",
+    "@libp2p/topology": "^4.0.3",
+    "esbuild": "^0.19.2",
+    "helia": "^2.0.1",
+    "http-server": "^14.1.1",
+    "playwright": "^1.36.2"
+  },
+  "scripts": {
+    "success": "node case-success.mjs",
+    "halt": "node case-halt.mjs",
+    "halt-updated": "node case-halt-updated.mjs",
+    "build": "esbuild npm-libs.js --bundle --format=esm --target=chrome115 --define:global=globalThis --define:process.env.NODE_DEBUG=false --outfile=npm-browser.js"
+  }
+}
